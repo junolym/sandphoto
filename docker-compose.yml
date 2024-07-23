@@ -1,0 +1,6 @@
+services:
+  web:
+    build: .
+    image: robin1024/sandphoto
+    ports:
+     - "8080:80"

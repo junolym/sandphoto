@@ -1,5 +1,8 @@
 <?php
 
+// 设置错误报告级别，排除 Deprecated 和 Warning
+error_reporting(E_ALL & ~(E_DEPRECATED|E_WARNING));
+
 /**
  * 图像处理类
  */
@@ -50,10 +53,6 @@ class Photo
         $color = $this->get_color($bgcolorid);
         imageresolution($this->im, self::DPI);
         imagefilledrectangle($this->im, 0, 0, $this->container_width - 1, $this->container_height - 1, $color);
-
-        $text = "www.nbfuli.com";
-        $white = imagecolorallocate($this->im, 255, 255, 255);
-        imagestring($this->im, 3, $this->container_width - strlen($text) * 7.5, $this->container_height - 20, $text, $white);
     }
 
     /**
